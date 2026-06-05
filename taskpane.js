@@ -1,3 +1,4 @@
+
 Office.onReady(function(info) {
   if (info.host === Office.HostType.Outlook) {
     aplicarTemplate();
@@ -67,4 +68,3 @@ function inserirTemplate() {
     }
   );
 }
- 
