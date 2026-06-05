@@ -1,88 +1,151 @@
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
-<Id>503f608a-e87c-49d3-842f-208efcdab22a</Id>
-<Version>1.0.0.1</Version>
-<ProviderName>KVM Tecnologia</ProviderName>
-<DefaultLocale>pt-BR</DefaultLocale>
-<DisplayName DefaultValue="Convite Assertivo"/>
-<Description DefaultValue="Insere template de reuniao no convite."/>
-<IconUrl DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/icon32.png"/>
-<HighResolutionIconUrl DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/icon32.png"/>
-<SupportUrl DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/"/>
-<AppDomains>
-<AppDomain>https://rafaelantonio-creator.github.io</AppDomain>
-</AppDomains>
-<Hosts>
-<Host Name="Mailbox"/>
-</Hosts>
-<Requirements>
-<Sets>
-<Set Name="Mailbox" MinVersion="1.1"/>
-</Sets>
-</Requirements>
-<FormSettings>
-<Form xsi:type="ItemRead">
-<DesktopSettings>
-<SourceLocation DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/taskpane.html"/>
-<RequestedHeight>300</RequestedHeight>
-</DesktopSettings>
-</Form>
-</FormSettings>
-<Permissions>ReadWriteItem</Permissions>
-<Rule xsi:type="RuleCollection" Mode="Or">
-<Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
-<Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
-</Rule>
-<DisableEntityHighlighting>false</DisableEntityHighlighting>
-<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
-<Requirements>
-<bt:Sets DefaultMinVersion="1.3">
-<bt:Set Name="Mailbox"/>
-</bt:Sets>
-</Requirements>
-<Hosts>
-<Host xsi:type="MailHost">
-<DesktopFormFactor>
-<FunctionFile resid="Taskpane.Url"/>
-<!--  Appointment Compose  -->
-<ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
-<OfficeTab id="TabDefault">
-<Group id="apptComposeCmdGroup">
-<Label resid="CommandsGroup.Label"/>
-<Control xsi:type="Button" id="apptComposeOpenPane">
-<Label resid="TaskpaneButton.Label"/>
-<Supertip>
-<Title resid="TaskpaneButton.Label"/>
-<Description resid="TaskpaneButton.SupertipText"/>
-</Supertip>
-<Icon>
-<bt:Image size="16" resid="Icon.32x32"/>
-<bt:Image size="32" resid="Icon.32x32"/>
-<bt:Image size="80" resid="Icon.32x32"/>
-</Icon>
-<Action xsi:type="ShowTaskpane">
-<SourceLocation resid="Taskpane.Url"/>
-</Action>
-</Control>
-</Group>
-</OfficeTab>
-</ExtensionPoint>
-</DesktopFormFactor>
-</Host>
-</Hosts>
-<Resources>
-<bt:Images>
-<bt:Image id="Icon.32x32" DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/icon32.png"/>
-</bt:Images>
-<bt:Urls>
-<bt:Url id="Taskpane.Url" DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/taskpane.html"/>
-</bt:Urls>
-<bt:ShortStrings>
-<bt:String id="CommandsGroup.Label" DefaultValue="KVM Tecnologia"/>
-<bt:String id="TaskpaneButton.Label" DefaultValue="Convite Assertivo"/>
-</bt:ShortStrings>
-<bt:LongStrings>
-<bt:String id="TaskpaneButton.SupertipText" DefaultValue="Aplicar template de convite assertivo na reuniao"/>
-</bt:LongStrings>
-</Resources>
-</VersionOverrides>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+           xsi:type="MailApp">
+  <Id>503f608a-e87c-49d3-842f-208efcdab22a</Id>
+  <Version>1.0.0.2</Version>
+  <ProviderName>KVM Tecnologia</ProviderName>
+  <DefaultLocale>pt-BR</DefaultLocale>
+  <DisplayName DefaultValue="Convite Assertivo"/>
+  <Description DefaultValue="Insere template de reuniao no convite."/>
+  <IconUrl DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/icon32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/icon32.png"/>
+  <SupportUrl DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/"/>
+  <AppDomains>
+    <AppDomain>https://rafaelantonio-creator.github.io</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.1"/>
+    </Sets>
+  </Requirements>
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/taskpane.html"/>
+        <RequestedHeight>300</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+  <Permissions>ReadWriteItem</Permissions>
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
+  </Rule>
+  <DisableEntityHighlighting>false</DisableEntityHighlighting>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Requirements>
+      <bt:Sets DefaultMinVersion="1.3">
+        <bt:Set Name="Mailbox"/>
+      </bt:Sets>
+    </Requirements>
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+          <FunctionFile resid="Commands.Url"/>
+          <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="apptComposeCmdGroup">
+                <Label resid="CommandsGroup.Label"/>
+                <Control xsi:type="Button" id="apptComposeOpenPane">
+                  <Label resid="TaskpaneButton.Label"/>
+                  <Supertip>
+                    <Title resid="TaskpaneButton.Label"/>
+                    <Description resid="TaskpaneButton.SupertipText"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.32x32"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.32x32"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.32x32" DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/icon32.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/taskpane.html"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/commands.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="CommandsGroup.Label" DefaultValue="KVM Tecnologia"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Convite Assertivo"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="TaskpaneButton.SupertipText" DefaultValue="Aplicar template de convite assertivo na reuniao"/>
+      </bt:LongStrings>
+    </Resources>
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+      <Requirements>
+        <bt:Sets DefaultMinVersion="1.7">
+          <bt:Set Name="Mailbox"/>
+        </bt:Sets>
+      </Requirements>
+      <Hosts>
+        <Host xsi:type="MailHost">
+          <DesktopFormFactor>
+            <FunctionFile resid="Commands.Url"/>
+            <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+              <OfficeTab id="TabDefault">
+                <Group id="apptComposeCmdGroup2">
+                  <Label resid="CommandsGroup.Label"/>
+                  <Control xsi:type="Button" id="apptComposeOpenPane2">
+                    <Label resid="TaskpaneButton.Label"/>
+                    <Supertip>
+                      <Title resid="TaskpaneButton.Label"/>
+                      <Description resid="TaskpaneButton.SupertipText"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="Icon.32x32"/>
+                      <bt:Image size="32" resid="Icon.32x32"/>
+                      <bt:Image size="80" resid="Icon.32x32"/>
+                    </Icon>
+                    <Action xsi:type="ShowTaskpane">
+                      <SourceLocation resid="Taskpane.Url"/>
+                    </Action>
+                  </Control>
+                </Group>
+              </OfficeTab>
+            </ExtensionPoint>
+            <ExtensionPoint xsi:type="LaunchEvent">
+              <LaunchEvents>
+                <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="aplicarTemplateAuto"/>
+              </LaunchEvents>
+              <SourceLocation resid="Commands.Url"/>
+            </ExtensionPoint>
+          </DesktopFormFactor>
+        </Host>
+      </Hosts>
+      <Resources>
+        <bt:Images>
+          <bt:Image id="Icon.32x32" DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/icon32.png"/>
+        </bt:Images>
+        <bt:Urls>
+          <bt:Url id="Taskpane.Url" DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/taskpane.html"/>
+          <bt:Url id="Commands.Url" DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/commands.html"/>
+        </bt:Urls>
+        <bt:ShortStrings>
+          <bt:String id="CommandsGroup.Label" DefaultValue="KVM Tecnologia"/>
+          <bt:String id="TaskpaneButton.Label" DefaultValue="Convite Assertivo"/>
+        </bt:ShortStrings>
+        <bt:LongStrings>
+          <bt:String id="TaskpaneButton.SupertipText" DefaultValue="Aplicar template de convite assertivo na reuniao"/>
+        </bt:LongStrings>
+      </Resources>
+    </VersionOverrides>
+  </VersionOverrides>
 </OfficeApp>
