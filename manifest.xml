@@ -4,7 +4,7 @@
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
            xsi:type="MailApp">
   <Id>503f608a-e87c-49d3-842f-208efcdab22a</Id>
-  <Version>1.0.0.4</Version>
+  <Version>1.0.0.5</Version>
   <ProviderName>KVM Tecnologia</ProviderName>
   <DefaultLocale>pt-BR</DefaultLocale>
   <DisplayName DefaultValue="Convite Assertivo"/>
@@ -37,16 +37,19 @@
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
   </Rule>
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.3">
+      <bt:Sets DefaultMinVersion="1.10">
         <bt:Set Name="Mailbox"/>
       </bt:Sets>
     </Requirements>
     <Hosts>
       <Host xsi:type="MailHost">
+        <Runtimes>
+          <Runtime resid="Commands.Url" lifetime="long"/>
+        </Runtimes>
         <DesktopFormFactor>
-          <FunctionFile resid="Taskpane.Url"/>
+          <FunctionFile resid="Commands.Url"/>
           <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
             <OfficeTab id="TabDefault">
               <Group id="apptComposeCmdGroup">
@@ -69,6 +72,12 @@
               </Group>
             </OfficeTab>
           </ExtensionPoint>
+          <ExtensionPoint xsi:type="LaunchEvent">
+            <LaunchEvents>
+              <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="aplicarTemplateAuto"/>
+            </LaunchEvents>
+            <SourceLocation resid="Commands.Url"/>
+          </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
     </Hosts>
@@ -78,6 +87,7 @@
       </bt:Images>
       <bt:Urls>
         <bt:Url id="Taskpane.Url" DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/taskpane.html"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://rafaelantonio-creator.github.io/kvm-outlook-addin/commands.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="CommandsGroup.Label" DefaultValue="KVM Tecnologia"/>
