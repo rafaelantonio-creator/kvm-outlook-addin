@@ -8,7 +8,6 @@
   <script src="taskpane.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f3f4f6;
@@ -16,7 +15,6 @@
       padding: 16px;
       min-height: 100vh;
     }
-
     .header {
       background: #0078D4;
       color: white;
@@ -24,18 +22,8 @@
       border-radius: 8px;
       margin-bottom: 16px;
     }
-
-    .header h2 {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .header p {
-      font-size: 11px;
-      opacity: 0.85;
-    }
-
+    .header h2 { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+    .header p { font-size: 11px; opacity: 0.85; }
     .card {
       background: white;
       border-radius: 8px;
@@ -43,7 +31,6 @@
       margin-bottom: 12px;
       border: 1px solid #e0e0e0;
     }
-
     .card h4 {
       font-size: 12px;
       color: #0078D4;
@@ -51,13 +38,7 @@
       letter-spacing: 0.5px;
       margin-bottom: 8px;
     }
-
-    .card p {
-      font-size: 12px;
-      color: #555;
-      line-height: 1.5;
-    }
-
+    .card p { font-size: 12px; color: #555; line-height: 1.5; }
     button {
       background: #0078D4;
       color: white;
@@ -70,10 +51,8 @@
       font-weight: 600;
       transition: background 0.2s;
     }
-
     button:hover { background: #005a9e; }
     button:active { background: #004578; }
-
     #status {
       margin-top: 10px;
       font-size: 12px;
@@ -82,34 +61,14 @@
       border-radius: 4px;
       display: none;
     }
-
-    #status.sucesso {
-      display: block;
-      background: #e6f4ea;
-      color: #2e7d32;
-    }
-
-    #status.erro {
-      display: block;
-      background: #fdecea;
-      color: #c62828;
-    }
-
-    .footer {
-      margin-top: 16px;
-      text-align: center;
-      font-size: 10px;
-      color: #aaa;
-    }
+    .footer { margin-top: 16px; text-align: center; font-size: 10px; color: #aaa; }
   </style>
 </head>
 <body>
-
   <div class="header">
     <h2>📅 Convite Assertivo</h2>
     <p>Padrão corporativo KVM Tecnologia</p>
   </div>
-
   <div class="card">
     <h4>O que será inserido</h4>
     <p>
@@ -120,12 +79,8 @@
       ⏱ Duração estimada
     </p>
   </div>
-
-  <button onclick="aplicarTemplate()">▶ Aplicar Template no Convite</button>
-
+  <button id="btnAplicar">▶ Aplicar Template no Convite</button>
   <div id="status"></div>
-
   <div class="footer">KVM Tecnologia © 2026</div>
-
 </body>
 </html>
