@@ -1,3 +1,8 @@
+// Carrega Office.js para o runtime JavaScript puro do Outlook Clássico
+if (typeof Office === 'undefined') {
+  importScripts('https://appsforoffice.microsoft.com/lib/1/hosted/office.js');
+}
+
 function aplicarTemplateAuto(event) {
   var template = [
     '<html><body style="font-family: Segoe UI, sans-serif; font-size: 14px; color: #333;">',
